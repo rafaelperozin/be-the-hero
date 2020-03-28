@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const generateUniqueId = require('../utils/generateUniqueId');
 const connection = require('../database/connection');
 
 // use async para retornar somente apos o insert for encerrado
@@ -23,7 +23,7 @@ module.exports = {
 
         // criar o id da ong
         // texto (4 bytes) de caracteres aleatorio e converte em uma string do tipo hexadecimal alfanumerica
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateUniqueId();
 
         // conectar ao db e cadastrar o dados
         // espera terminar essa funcao para dai continuar
